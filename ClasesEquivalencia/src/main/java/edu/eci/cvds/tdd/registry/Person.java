@@ -29,6 +29,16 @@ public class Person {
      * Flag to specify if a person is alive
      */
     private boolean alive;
+    
+    /**
+     * Flag to specify if a person is an active military member
+     */
+    private boolean militar;
+    
+    /**
+     * Flag to specify if a person is in prison
+     */
+    private boolean inPrisoned;
 
     /**
      * The class' default constructor
@@ -45,13 +55,17 @@ public class Person {
      * @param age the age
      * @param gender the gender
      * @param alive if the person is alive
+     * @param militar if the person is an active military member
+     * @param inPrisoned if the person is in prison
      */
-    public Person(String name, int id, int age, Gender gender, boolean alive) {
+    public Person(String name, int id, int age, Gender gender, boolean alive, boolean militar, boolean inPrisoned) {
         this.name = name;
         this.id = id;
         this.age = age;
         this.gender = gender;
         this.alive = alive;
+        this.militar= militar;
+        this.inPrisoned= inPrisoned;
     }
 
     /**
@@ -98,6 +112,24 @@ public class Person {
     public boolean isAlive() {
         return alive;
     }
+    
+    /**
+     * Returns if the person is an active military member
+     * 
+     * @return the militar
+     */
+    public boolean isMilitar() {
+        return militar;
+    }
+    
+    /**
+     * Returns if the person is in prison
+     * 
+     * @return the alive
+     */
+    public boolean isInPrison() {
+        return inPrisoned;
+    }
 
     /**
      * Sets the person name
@@ -143,13 +175,31 @@ public class Person {
     public void setAlive(boolean alive) {
         this.alive = alive;
     }
+    
+    /**
+     * Returns if the person is an active military member
+     * 
+     * @return the militar
+     */
+    public boolean setMilitar(boolean militar) {
+        return this.militar= militar;
+    }
+    
+    /**
+     * Returns if the person is in prison
+     * 
+     * @return the alive
+     */
+    public boolean setInPrison(boolean inPrison) {
+        return this.inPrisoned= inPrison;
+    }
 
     /**
      * @{inheritdoc}
      */
     @Override
     public String toString() {
-        return "Person [name=" + name + ", id=" + id + ", age=" + age + ", gender=" + gender + ", alive=" + alive + "]";
+        return "Person [name=" + name + ", id=" + id + ", age=" + age + ", gender=" + gender + ", alive=" + alive + ", militar" + militar + ", in prison" + inPrisoned +"]";
     }
 
 }
